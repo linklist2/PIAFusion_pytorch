@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """训练照明感知网络"""
 import argparse
 import os

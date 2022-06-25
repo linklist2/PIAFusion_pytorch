@@ -98,6 +98,7 @@ if __name__ == '__main__':
             else:
                 lr = args.lr * (args.epochs - epoch) / (args.epochs - args.epochs // 2)
 
+            # 修改学习率
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
 

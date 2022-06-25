@@ -68,7 +68,7 @@ If the link given above has expired, you can download the dataset [here](https:/
 ```shell
 python train_illum_cls.py --dataset_path 'datasets/cls_dataset' --epochs 100 --save_path 'pretrained' --batch_size 128 --lr 0.001
 ```
-Then the weights of the best classification model can be found in ```pretrained/best_cls.pth ```, The test accuracy of the best model is around 98%.
+Then the weights of the best classification model can be found in [pretrained/best_cls.pth](https://github.com/linklist2/PIAFusion_pytorch/blob/master/pretrained/best_cls.pth), The test accuracy of the best model is around 98%.
 
 ### 4. Training the Illmination-Aware Fusion Network
 ```shell
