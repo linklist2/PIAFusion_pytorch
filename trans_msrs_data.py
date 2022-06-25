@@ -47,4 +47,4 @@ if __name__ == '__main__':
         vi_image = cv2.cvtColor(vi_image, cv2.COLOR_RGB2BGR)
 
         cv2.imwrite(os.path.join(vis_dir, f'{index}.png'), vi_image)
-        cv2.imwrite(os.path.join(Inf_dir, f'{index}.png'), vi_image)
+        cv2.imwrite(os.path.join(Inf_dir, f'{index}.png'), ir_image)
