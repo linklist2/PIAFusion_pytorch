@@ -10,6 +10,8 @@ Our experiments were tested on both win10 1080Ti and Ubuntu 20.04 3090 and found
 
 It is worth noting that the loss function in the version implemented by pytorch is consistent with the loss function in the paper, and may be slightly different from the tensorflow version.
 
+Many thanks to the author for his help during code debugging！
+
 ## Recommended Environment(win10 1080Ti)
 
  - torch 1.9.0 
