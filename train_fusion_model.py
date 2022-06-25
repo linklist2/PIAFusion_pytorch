@@ -38,11 +38,11 @@ def init_seeds(seed=0):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='PyTorch PIAFusion')
-    parser.add_argument('--dataset_path', metavar='DIR', default='datasets/msrs_train' ,
+    parser.add_argument('--dataset_path', metavar='DIR', default='datasets/msrs_train',
                         help='path to dataset (default: imagenet)')
     parser.add_argument('-a', '--arch', metavar='ARCH', default='fusion_model',
                         choices=['fusion_model'])
-    parser.add_argument('--save_path', default='pretrained') # 模型存储路径
+    parser.add_argument('--save_path', default='pretrained')  # 模型存储路径
     parser.add_argument('-j', '--workers', default=1, type=int, metavar='N',
                         help='number of data loading workers (default: 4)')
     parser.add_argument('--epochs', default=30, type=int, metavar='N',
@@ -103,11 +103,9 @@ if __name__ == '__main__':
 
             model.train()
             train_tqdm = tqdm(train_loader, total=len(train_loader))
-            for vis_image, vis_y_image, cb, cr, inf_image, _ in train_tqdm:
+            for vis_image, vis_y_image, _, _, inf_image, _ in train_tqdm:
                 vis_y_image = vis_y_image.cuda()
                 vis_image = vis_image.cuda()
-                cb = cb.cuda()
-                cr = cr.cuda()
                 inf_image = inf_image.cuda()
                 optimizer.zero_grad()
                 fused_image = model(vis_y_image, inf_image)
