@@ -31,9 +31,9 @@ def gradient(input):
         [-1., 0., 1.]
     ]).reshape(1, 1, 3, 3).cuda()
     filter2.weight.data = torch.tensor([
-        [-1., -2., -1.],
+        [1., 2., 1.],
         [0., 0., 0.],
-        [1., 2., 1.]
+        [-1., -2., -1.]
     ]).reshape(1, 1, 3, 3).cuda()
 
     g1 = filter1(input)

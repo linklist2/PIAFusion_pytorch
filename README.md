@@ -2,6 +2,8 @@
 
 The Chinese version of the README.md could be found in [README_中文.md](https://github.com/linklist2/PIAFusion_pytorch/blob/master/README_%E4%B8%AD%E6%96%87.md).
 
+If you think this project is helpful to you, please click the star button in the upper right corner!
+
 This is **unofficial** pytorch implementation of “PIAFusion: A progressive infrared and visible image fusion network based on illumination aware” by [linklist2](https://github.com/linklist2).
 
 Official **tensorflow implementation** of this paper and more details could be found in **[PIAFusion](https://github.com/Linfeng-Tang/PIAFusion)**.
