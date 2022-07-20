@@ -9,6 +9,10 @@
 
 非常感谢作者在代码调试期间提供的帮助。
 
+## 最近更新
+
+ - 更新论文中图片对比时画中画效果
+
 ## 推荐安装的环境(在win10 1080Ti中的虚拟环境)
 
  - torch 1.9.0 
@@ -107,6 +111,8 @@ python test_fusion_model.py --h5_path 'test_data/MSRS' --save_path 'results/fusi
  │   ├── 00537D.png
  │   ├── ......
 ```
+
+## 画中画效果
 
 # 待做
 
