@@ -14,6 +14,11 @@ It is worth noting that the loss function in the version implemented by pytorch 
 
 Many thanks to the author for his help during code debugging！
 
+## Update
+ - Picture in picture(**[plotRegionZoom.py](https://github.com/linklist2/PIAFusion_pytorch/blob/master/utils/plotRegionZoom.py)**):
+  
+   ![image](utils/multiregion.bmp)
+
 ## Recommended Environment(win10 1080Ti)
 
  - torch 1.9.0 
