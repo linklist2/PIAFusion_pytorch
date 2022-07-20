@@ -11,7 +11,7 @@
 
 ## 最近更新
 
- - 更新论文中图片对比时画中画效果
+ - 更新论文中图片对比时画中画效果， 在后面会有介绍
 
 ## 推荐安装的环境(在win10 1080Ti中的虚拟环境)
 
@@ -113,6 +113,26 @@ python test_fusion_model.py --h5_path 'test_data/MSRS' --save_path 'results/fusi
 ```
 
 ## 画中画效果
+
+请修改utils/plotRegionZoom.py中如下关键信息使用；
+```shell
+    region_list = [
+        [137, 105, 167, 161],
+        [149, 171, 172, 212]
+    ]
+
+    zoom_bool = [True, True]
+
+    color_list = ['red', 'green']
+    line_list = [1, 1]
+    scale_list = [2, 2]
+    place_list = ['top left', 'upper right']
+    plotMultiRegion('39.bmp', region_list=region_list, line_width_list=line_list, color_list=color_list,
+                    place_list=place_list, scale_list=scale_list, save_path='multiregion.bmp', zoom_bool=zoom_bool)
+```
+
+其中region_list表示需要框选的区域的坐标信息列表；zoom_bool表示是否将框选的区域放大；place_list表示将放大的区域放置在原图中的何处；
+color_list表示框的颜色；line_list表示框的线条宽度；scale_list表示框选的区域放大的倍数；39.bmp替换成自己的图片路径；multiregion.bmp换成自己想要保存的路径；
 
 # 待做
 
