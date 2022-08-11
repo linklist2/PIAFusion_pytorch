@@ -78,13 +78,13 @@ def zoomPlot(img: np.ndarray, region: np.ndarray, plot_place: str, scale: float,
     h, w = region.shape[:2]
 
     # 替换大图中的对应区域
-    if plot_place == 'top left':
+    if plot_place == 'top left':  # 左上
         img[0:h, 0:w] = region
-    elif plot_place == 'top right':
+    elif plot_place == 'top right': # 右上
         img[0:h, o_w - w:] = region
-    elif plot_place == 'upper left':
+    elif plot_place == 'bottom left':  # 左下
         img[o_h - h:, 0:w] = region
-    elif plot_place == 'upper right':
+    elif plot_place == 'bottom right':  # 右下
         img[o_h - h:, o_w - w:] = region
 
     cv2.imwrite(save_path, img)
@@ -134,6 +134,6 @@ if __name__ == '__main__':
     color_list = ['red', 'green']
     line_list = [1, 1]
     scale_list = [2, 2]
-    place_list = ['top left', 'upper right']
+    place_list = ['top left', 'bottom right']
     plotMultiRegion('39.bmp', region_list=region_list, line_width_list=line_list, color_list=color_list,
                     place_list=place_list, scale_list=scale_list, save_path='multiregion.bmp', zoom_bool=zoom_bool)
