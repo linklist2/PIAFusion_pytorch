@@ -61,19 +61,20 @@ if __name__ == '__main__':
         model.load_state_dict(torch.load(args.fusion_pretrained))
         model.eval()
         test_tqdm = tqdm(test_loader, total=len(test_loader))
-        for _, vis_y_image, cb, cr, inf_image, name in test_tqdm:
-            vis_y_image = vis_y_image.cuda()
-            cb = cb.cuda()
-            cr = cr.cuda()
-            inf_image = inf_image.cuda()
+        with torch.no_grad():
+            for _, vis_y_image, cb, cr, inf_image, name in test_tqdm:
+                vis_y_image = vis_y_image.cuda()
+                cb = cb.cuda()
+                cr = cr.cuda()
+                inf_image = inf_image.cuda()
 
-            # 测试转为Ycbcr的数据再转换回来的输出效果，结果与原图一样，说明这两个函数是没有问题的。
-            # t = YCbCr2RGB2(vis_y_image[0], cb[0], cr[0])
-            # transforms.ToPILImage()(t).save(name[0])
+                # 测试转为Ycbcr的数据再转换回来的输出效果，结果与原图一样，说明这两个函数是没有问题的。
+                # t = YCbCr2RGB2(vis_y_image[0], cb[0], cr[0])
+                # transforms.ToPILImage()(t).save(name[0])
 
-            fused_image = model(vis_y_image, inf_image)
-            fused_image = clamp(fused_image)
+                fused_image = model(vis_y_image, inf_image)
+                fused_image = clamp(fused_image)
 
-            rgb_fused_image = YCrCb2RGB(fused_image[0], cb[0], cr[0])
-            rgb_fused_image = transforms.ToPILImage()(rgb_fused_image)
-            rgb_fused_image.save(f'{args.save_path}/{name[0]}')
+                rgb_fused_image = YCrCb2RGB(fused_image[0], cb[0], cr[0])
+                rgb_fused_image = transforms.ToPILImage()(rgb_fused_image)
+                rgb_fused_image.save(f'{args.save_path}/{name[0]}')
