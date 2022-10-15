@@ -35,7 +35,7 @@
 为了更好地观看训练的图片以及方便书写和调试代码， 本项目选择将h5文件还原为png格式的图片，使用下列命令转换：
 
 ```shell
-python trans_illum_data.py --h5_path 'datasets/data_illum.h5' --msrs_root_path 'datasets/cls_dataset'
+python trans_illum_data.py --h5_path 'datasets/data_illum.h5' --cls_root_path 'datasets/cls_dataset'
 ```
 转换后的目录如下所示:
 ```shell

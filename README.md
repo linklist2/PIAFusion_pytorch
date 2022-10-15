@@ -37,7 +37,7 @@ Create ```datasets``` folder in this project, and then move the downloaded h5 fi
 
 For easy viewing of images and debugging code, plz run the following code:
 ```shell
-python trans_illum_data.py --h5_path 'datasets/data_illum.h5' --msrs_root_path 'datasets/cls_dataset'
+python trans_illum_data.py --h5_path 'datasets/data_illum.h5' --cls_root_path 'datasets/cls_dataset'
 ```
 The converted directory format is as follows:
 ```shell
